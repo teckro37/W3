@@ -666,25 +666,134 @@ thislist = ["apple", "banana", "cherry"]
 print(thislist[-1]) # returns cherry
 
 # Range of Indexes
-# You can specify a range of indexes by specifying where to start and where to end the range.
-# When specifying a range, the return value will be a new list with the specified items.
+# Specify a range of indexes by specifying where to start and where to end the range.
+# Return value will be a new list with the specified items.
 # Return the third, fourth, and fifth item:
 thislist = ["apple", "banana", "cherry", "orange", "kiwi", "melon", "mango"]
 print(thislist[2:5]) # returns ['cherry', 'orange', 'kiwi']
 
 # The search will start at index 2 (included) and end at index 5 (not included).
-# Remember that the first item has index 0.
+# First item has index 0.
 
-# By leaving out the start value, the range will start at the first item:
-# This example returns the items from the beginning to, but NOT including, "kiwi":
+# Leaving out the start value will start the range at the first item:
+# This returns the items from the beginning to, but NOT including, "kiwi":
 
 thislist = ["apple", "banana", "cherry", "orange", "kiwi", "melon", "mango"]
 print(thislist[:4])
 
-# By leaving out the end value, the range will go on to the end of the list:
-# This example returns the items from "cherry" to the end:
+# Leaving out the end value will go on to the end of the list:
+# This returns the items from "cherry" to the end:
 thislist = ["apple", "banana", "cherry", "orange", "kiwi", "melon", "mango"]
 print(thislist[2:])
+
+# Range of Negative Indexes
+# Specify negative indexes if you want to start the search from the end of the list:
+
+# This returns the items from "orange" (-4) to, but NOT including "mango" (-1):
+thislist = ["apple", "banana", "cherry", "orange", "kiwi", "melon", "mango"]
+print(thislist[-4:-1])
+
+# Check if Item Exists
+# Determine if a specified item is present in a list, use the in keyword:
+# Check if "apple" is present in the list:
+thislist = ["apple", "banana", "cherry"]
+if "apple" in thislist:
+  print("Yes, 'apple' is in the fruits list")
+
+
+# Python - Change List Items
+# Change Item Value
+# Change the value of a specific item, refer to the index number:
+# Change the second item:
+thislist = ["apple", "banana", "cherry"]
+thislist[1] = "blackcurrant"
+print(thislist)
+
+# Change a Range of Item Values
+# Change the value of items within a specific range, define a list with the new values, 
+# and refer to the range of index numbers where you want to insert the new values:
+# Change the values "banana" and "cherry" with the values "blackcurrant" and "watermelon":
+thislist = ["apple", "banana", "cherry", "orange", "kiwi", "mango"]
+thislist[1:3] = ["blackcurrant", "watermelon"]
+print(thislist)
+
+# If you insert more items than you replace, the new items will be inserted where you specified, and the remaining items will move accordingly:
+# Change the second value by replacing it with two new values:
+thislist = ["apple", "banana", "cherry"]
+thislist[1:2] = ["blackcurrant", "watermelon"]
+print(thislist) - returns ['apple', 'blackcurrant', 'watermelon', 'cherry']
+
+# The length of the list will change when the # of items inserted 
+# does not match the number of items replaced.
+
+# If you insert less items than you replace, 
+# the new items will be inserted where you specified, 
+# and the remaining items will move accordingly:
+
+# Change the second and third value by replacing it with one value:
+thislist = ["apple", "banana", "cherry"]
+thislist[1:3] = ["watermelon"]
+print(thislist) - returns ['apple', 'watermelon'] and thislist removed banana and cherry
+
+# Insert Items
+# Insert a new list item, without replacing any of the existing values,
+# we can use the insert() method.
+# The insert() method inserts an item at the specified index:
+# listname.insert(indexnum, item)
+
+# Insert "watermelon" as the third item:
+thislist = ["apple", "banana", "cherry"]
+thislist.insert(2, "watermelon")
+print(thislist) - returns ['apple', 'banana', 'watermelon', 'cherry']
+# list will now contain 4 items
+
+
+# Python - Add List Items
+# Append Items - to add an item to the end of the list
+# Using the append() method to append an item:
+thislist = ["apple", "banana", "cherry"]
+thislist.append("orange")
+print(thislist) - returns ['apple', 'banana', 'cherry', 'orange']
+
+# Insert Items
+# Insert a list item at a specified index by using, use the insert() method.
+# listname.insert(indexnum, list)
+
+# Insert an item as the second position:
+thislist = ["apple", "banana", "cherry"]
+thislist.insert(1, "orange")
+print(thislist) - returns ["apple", "orange", "banana", "cherry"]
+# list now has 4 items
+
+# Extend List
+# appends elements from another list to the current list
+
+# Add the elements of tropical to thislist:
+thislist = ["apple", "banana", "cherry"]
+tropical = ["mango", "pineapple", "papaya"]
+thislist.extend(tropical)
+print(thislist) - returns ['apple', 'banana', 'cherry', 'mango', 'pineapple', 'papaya']
+# tropical got added to end of thislist
+
+# Add Any Iterable
+# extend() method does not have to append lists
+# you can add any iterable object (tuples, sets, dictionaries etc.)
+
+# Add elements of a tuple to a list:
+thislist = ["apple", "banana", "cherry"]
+thistuple = ("kiwi", "orange")
+thislist.extend(thistuple)
+print(thislist) - returns ['apple', 'banana', 'cherry', 'kiwi', 'orange']
+
+# Remove List Items
+# Remove Specified Item - remove()
+
+
+
+
+
+
+
 
 # ---
 # ---
